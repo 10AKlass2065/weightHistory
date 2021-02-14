@@ -36,7 +36,7 @@ export const logIn = (email, password) => {
             type: LOGIN_REQUEST + SENT,
         });
         if(validatePassword(password) && validateEmail(email)) {
-            fetch(`http://localhost:8000/api/login`, {
+            fetch(`/api/login`, {
                 method: "POST",
                 headers: {
                     "content-type": "application/json"
@@ -74,7 +74,7 @@ export const signUp = (email, password) => {
             type: REGISTER_REQUEST + SENT,
         });
         if(validatePassword(password) && validateEmail(email)) {
-            fetch(`http://localhost:8000/api/register`, {
+            fetch(`/api/register`, {
                 method: "POST",
                 headers: {
                     "content-type": "application/json"
@@ -111,7 +111,7 @@ export const getProfileInfo = (authToken) => {
         dispatch({
             type: GET_PROFILE_INFO + SENT,
         })
-        fetch(`http://localhost:8000/api/getProfileInfo?authToken=${authToken}`, {
+        fetch(`/api/getProfileInfo?authToken=${authToken}`, {
             method: 'GET',
         })
             .then(response => response.json())
@@ -142,7 +142,7 @@ export const addWeightRecord = (date, weight, authToken) => {
         dispatch({
             type: ADD_WEIGHT_RECORD + SENT,
         })
-        fetch(`http://localhost:8000/api/makeWeightRecord?authToken=${authToken}`, {
+        fetch(`/api/makeWeightRecord?authToken=${authToken}`, {
             method: "POST",
             headers: {
                 "content-type": "application/json"
