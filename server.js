@@ -9,6 +9,9 @@ app.use(express.json())
 
 app.use(cors());
 
+app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, 'public')));
+
 const uri = "mongodb+srv://StaRen:z5YpLm5stHUkNbyk@cluster0.czbdn.mongodb.net/Cluster0?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true });
 client.connect((err) => {
