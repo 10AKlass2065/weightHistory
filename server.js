@@ -14,6 +14,14 @@ client.connect((err) => {
 
     require('./routes')(app, client.db('Cluster0'));
 
+    app.get('/ping', function (req, res) {
+        return res.send('pong');
+    });
+
+    app.get('/*', function (req, res) {
+        res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    });
+
     app.listen(port, () => {
         console.log('We are live on ' + port);
     });
