@@ -1,7 +1,7 @@
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import React from 'react';
 import {CSSTransition, TransitionGroup} from "react-transition-group";
-import "./appTransition.sass";
+import "./AppTransition.sass";
 import MainPage from "../MainPage";
 import LoginPage from "../LoginPage";
 import Profile from "../Profile/Profile";
